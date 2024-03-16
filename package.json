@@ -26,5 +26,5 @@
     "chai-http": "^4.3.0",
     "mocha": "^8.2.1"
   },
-  "description": "A Minimal expression api to get youtube subscribers"
+  "description": ""
 }
