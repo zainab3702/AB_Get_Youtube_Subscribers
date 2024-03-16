@@ -12,7 +12,7 @@ Web Deployment : https://ab-get-youtube-subscribers-zf71.onrender.com
 
 1. **"/ "** -> This default route will render the "index.html file" when the app launches.
    
-![Main](https://github.com/Belalirshad/AB-YT-Subs/assets/101103105/8fe926dc-bc90-467e-bde2-fabc9511307d)
+![Main](https://github.com/zainab3702/AB_Get_Youtube_Subscribers/issues/1#issue-2190195625)
 
 2. https://ab-yt-subs.onrender.com/api-docs#/ -> This route for Swagger Docs.
    
