@@ -1,6 +1,7 @@
 // Import required modules
 const express = require("express");
 const path = require("path");
+
 const Subscriber = require("./models/subscribers");
 
 // Create an instance of the Express application
@@ -37,6 +38,8 @@ app.get("/subscribers/names", async (req, res) => {
       Error_message: "No Subscriber name." });
   }
 });
+
+
 
 // API to get subscribers by id
 app.get("/subscribers/:id", async (req, res) => {
