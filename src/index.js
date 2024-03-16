@@ -13,6 +13,36 @@ const port = process.env.port || 3000;
 app.use(express.json()); // Parsing JSON bodies
 app.use(express.urlencoded({ extended: false })); // Parsing URL-encoded bodies
 
+// options for swagger ui docs
+const options = {
+    definition: {
+      openapi: "3.0.0",
+      info: {
+        title: "Get Yotube Subcribers",
+        version: "1.0.0",
+        description:
+          "A Minimal Express API To Get Youtube Subscribers by Zainab Faiqua.",
+      },
+      servers: [
+        {
+          url: "https://ab-get-youtube-subscribers-zf71.onrender.com",
+        },
+        {
+          url: "http://localhost:3000/",
+        },
+      ],
+    },
+    apis: ["./src/app.js"],
+  };
+  
+  const specs = swaggerJsDoc(options);
+  app.use("/", swaggerUI.serve, swaggerUI.setup(specs));
+  
+  // enabling cors to get over CORS Restriction
+  app.use(cors());
+  
+
+
 // Connecting to the database
 const DATABASE_URL = "mongodb+srv://zainabfaiqua03:itsme03@subscribers.0zedevu.mongodb.net/subscribers?retryWrites=true&w=majority&appName=subscribers"
 
