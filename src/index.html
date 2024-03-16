@@ -1,0 +1,90 @@
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>GET Youtube Subscribers</title>
+</head>
+
+<style>
+  body {
+    background-color: #063f53;
+
+    display: flex;
+  }
+
+  .container {
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 30px 0px 50px 0px;
+    font-family: Tahoma;
+    border: 2px solid white;
+    background-color: #063f53;
+    border-radius: 12px;
+    color: #ffffff;
+    width: 80vw;
+  }
+
+  h1{
+    text-align: center;
+    font-size: 250%;
+    color: #ffffff;
+    margin-bottom: 48px;
+  }
+
+  b {
+    color: #f44e4e;
+  }
+
+  ol {
+    padding: 1% 0 0 10%;
+  }
+
+  em {
+    color: #41ada8;
+    font-weight: bolder;
+  }
+
+  hr {
+    width: 85%;
+    color: #009b95;
+  }
+</style> 
+
+<body>
+  <div class="container">
+    <div>
+      <h1>GET <b>YOUTUBE</b> SUBSCRIBERS</h1>
+    </div>
+    <hr />
+    <div>
+      <ol>
+        <li>
+          <h3>Retrive all Subscribers :</h3>
+          <p> GET <em>http://localhost:3000/subscribers</em> :
+            Response with an array of all subscribers details in the database.</p>
+
+        </li>
+
+        <li>
+          <h3>Retrive Subscribers Names and Channels:</h3>
+          <p> GET<em> http://localhost:3000/subscribers/names</em> :
+            Response with an array of all subscribers with only two feilds, their names and subscribed
+            channel.
+          </p>
+        </li>
+
+        <li>
+          <h3>Retrive a Subscriber by it's ID:</h3>
+          <p> GET <em>http://localhost:3000/subscribers/:id</em> : Retrive the details of subscriber with the given ID.
+          <p>Demo ID : <strong>65f1dcf0ff7b636632d54ed1</strong> </p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</body>
+
+</html>
