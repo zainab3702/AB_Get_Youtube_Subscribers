@@ -11,22 +11,23 @@ Web Deployment : https://ab-get-youtube-subscribers-zf71.onrender.com
 ## API Endpoints
 
 1. **"/ "** -> This default route will render the "index.html file" when the app launches.
+2. 
+![Main_G_YT_s](https://github.com/zainab3702/AB_Get_Youtube_Subscribers/assets/144930831/45cb70d7-0023-44b9-baea-775706654136)
+
+
+3. https://ab-yt-subs.onrender.com/api-docs#/ -> This route for Swagger Docs.
    
-![Main](https://github.com/zainab3702/AB_Get_Youtube_Subscribers/issues/1#issue-2190195625)
+![Swagger](https://github.com/zainab3702/AB_Get_Youtube_Subscribers/assets/144930831/5b4e5d8f-9635-47fa-a144-4394e858ba93)
 
-2. https://ab-yt-subs.onrender.com/api-docs#/ -> This route for Swagger Docs.
-   
-![Swagger](https://github.com/zainab3702/AB_Get_Youtube_Subscribers/issues/2#issue-2190783790)
+3. **"/subscribers "** -> This endpoint returns an array of all subscribers in the database. https://ab-get-youtube-subscribers-zf71.onrender.com/subscribers
 
-3. **"/subscribers "** -> This endpoint returns an array of all subscribers in the database. https://ab-yt-subs.onrender.com/subscribers
+![Subscribers](https://github.com/zainab3702/AB_Get_Youtube_Subscribers/assets/144930831/c075344e-c938-47a9-9a7b-67d048b01b52)
 
-![Subscribers](https://github.com/zainab3702/AB_Get_Youtube_Subscribers/issues/3#issue-2190784227) 
-
-4. **"/subscribers/names "** -> This endpoint returns an array of subscribers with only two fields, their name and subscribed channel. https://ab-yt-subs.onrender.com/subscribers/names
+4. **"/subscribers/names "** -> This endpoint returns an array of subscribers with only two fields, their name and subscribed channel. https://ab-get-youtube-subscribers-zf71.onrender.com/subscribers/names
 
 ![Subs_by_names](https://github.com/zainab3702/AB_Get_Youtube_Subscribers/assets/144930831/3db2accd-4a48-47d4-bb71-176b8fc06f34)
 
-5. **"/subscribers/:id "** -> This returns the details of subscriber whose Id is provided in endpoint. https://ab-yt-subs.onrender.com/subscribers/:id
+5. **"/subscribers/:id "** -> This returns the details of subscriber whose Id is provided in endpoint. https://ab-get-youtube-subscribers-zf71.onrender.com/subscribers/:id
 
 ![Subs_by_id](https://github.com/zainab3702/AB_Get_Youtube_Subscribers/assets/144930831/ebc4c400-bca8-4d8a-aed4-6dc4a67281f6)
 
