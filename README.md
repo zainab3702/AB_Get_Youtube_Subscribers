@@ -16,20 +16,19 @@ Web Deployment : https://ab-get-youtube-subscribers-zf71.onrender.com
 
 2. https://ab-yt-subs.onrender.com/api-docs#/ -> This route for Swagger Docs.
    
-![Swagger](https://github.com/Belalirshad/AB-YT-Subs/assets/101103105/a1ba420f-aec1-44f8-bfb3-ca3b5eb81eae)
+![Swagger](https://github.com/zainab3702/AB_Get_Youtube_Subscribers/issues/2#issue-2190783790)
 
 3. **"/subscribers "** -> This endpoint returns an array of all subscribers in the database. https://ab-yt-subs.onrender.com/subscribers
 
-![Subscribers](https://github.com/Belalirshad/AB-YT-Subs/assets/101103105/110dd844-7354-49dd-a06b-aaa1a5ca2249) 
+![Subscribers](https://github.com/zainab3702/AB_Get_Youtube_Subscribers/issues/3#issue-2190784227) 
 
 4. **"/subscribers/names "** -> This endpoint returns an array of subscribers with only two fields, their name and subscribed channel. https://ab-yt-subs.onrender.com/subscribers/names
 
-![Names](https://github.com/Belalirshad/AB-YT-Subs/assets/101103105/cdfb7176-138f-48b0-9b04-346241e4944b) 
+![Subs_by_names](https://github.com/zainab3702/AB_Get_Youtube_Subscribers/assets/144930831/3db2accd-4a48-47d4-bb71-176b8fc06f34)
 
 5. **"/subscribers/:id "** -> This returns the details of subscriber whose Id is provided in endpoint. https://ab-yt-subs.onrender.com/subscribers/:id
 
-![Id](https://github.com/Belalirshad/AB-YT-Subs/assets/101103105/7c455a22-3e01-4a71-bab7-48508bb9a905) 
-
+![Subs_by_id](https://github.com/zainab3702/AB_Get_Youtube_Subscribers/assets/144930831/ebc4c400-bca8-4d8a-aed4-6dc4a67281f6)
 
 ## Application Folder Structure
 
