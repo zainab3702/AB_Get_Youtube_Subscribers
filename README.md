@@ -15,7 +15,7 @@ Web Deployment : https://ab-get-youtube-subscribers-zf71.onrender.com
 ![Main_G_YT_s](https://github.com/zainab3702/AB_Get_Youtube_Subscribers/assets/144930831/45cb70d7-0023-44b9-baea-775706654136)
 
 
-3. https://ab-yt-subs.onrender.com/api-docs#/ -> This route for Swagger Docs.
+3. https://ab-get-youtube-subscribers-zf71.onrender.com/api-docs -> This route for Swagger Docs.
    
 ![Swagger](https://github.com/zainab3702/AB_Get_Youtube_Subscribers/assets/144930831/5b4e5d8f-9635-47fa-a144-4394e858ba93)
 
