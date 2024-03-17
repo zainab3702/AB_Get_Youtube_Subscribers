@@ -5,8 +5,13 @@ const Subscriber = require("./models/subscribers");
 
 // Create an instance of the Express application
 const app = express();
+app.use(express.static("public"));
 
-// API to render html file
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+//HOME PAGE
+// Serve index.html file as the home page
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "/index.html"));
 });
@@ -109,9 +114,10 @@ app.get("/subscribers/names", async (req, res) => {
     //Response data
     res.status(200).send(subscribers);
   } catch (error) {
-    res.status(404)
-    .send({ // Error Message
-      Error_message: "No Subscriber name." });
+    res.status(404).send({
+      // Error Message
+      Error_message: "No Subscriber name.",
+    });
   }
 });
 
@@ -146,20 +152,10 @@ app.get("/subscribers/names", async (req, res) => {
 app.get("/subscribers/:id", async (req, res) => {
   try {
     let subscribers = await Subscriber.findById(req.params.id);
-    // Response data
     res.status(200).send(subscribers);
   } catch (error) {
-    // Error status and message
-    res
-      .status(400)  //Error status code
-      .send({ // Error Message
-        Error_message: "No Subscriber found related to this id." });
+    res.status(400).send({ message: error.message });
   }
-});
-
-// Handles all the unwanted request
-app.use((req, res) => {
-    res.status(404).json({ message: "Error - Route not found" }); // Send a JSON response with a status of 404 (Not Found)
 });
 
 module.exports = app;
