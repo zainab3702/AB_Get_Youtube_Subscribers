@@ -6,8 +6,6 @@ const app = require("./src/createDatabase"); // Assuming your Express applicatio
 chai.use(chaiHttp);
 chai.should();
 
-// const Subscriber = require("./src/models/subscribers");
-
 describe("Subscribers API", () => {
   // Test the home page
   describe("GET /", () => {
