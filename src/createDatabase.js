@@ -1,68 +1,85 @@
-const express = require("express"); // Import the Express framework
-const path = require("path"); // Import the path module for working with file paths
+// Import necessary modules
+const mongoose = require("mongoose");
+const express = require("express");
+const path = require("path");
 
-//SCHEMA
-const schema = require("./models/subscribers"); // Import the subscriber model
-const { error } = require("console"); // Import the 'error' object from the console module
+// Import database schema/model
+const schema = require("./models/subscribers");
 
-const app = express(); // Create an Express application
+// Create Express application
+const app = express();
 
-//PARSE INCOMING JSON DATA
-app.use(express.json()); // Middleware to parse incoming JSON data
-app.use(express.urlencoded({ extended: false })); // Middleware to parse incoming URL-encoded data
+// Parse incoming JSON data
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-//HOME PAGE
+// Connect to the database
+mongoose
+  .connect(
+    "mongodb+srv://zainabfaiqua03:itsme03@subscribers.0zedevu.mongodb.net/subscribers?retryWrites=true&w=majority&appName=subscribers",
+    { useNewUrlParser: true, useUnifiedTopology: true }
+  )
+  .then(() => {
+    console.log("Connected to database");
+  })
+  .catch((err) => {
+    console.error("Error connecting to database:", err);
+    process.exit(1); // Exit the application if unable to connect to the database
+  });
+
+// Define routes
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "/index.html")); // Serve the index.html file as the home page
+  res.sendFile(path.join(__dirname, "/index.html"));
 });
 
-//THIS ROUTE SHOWS ALL THE SUBSCRIBERS LIST WITH DETAILS
+// Handle route for retrieving all subscribers
 app.get("/subscribers", async (req, res, next) => {
   try {
-    let subscribers = await schema.find(); // Retrieve all subscribers from the schema/model
-    res.status(200).json(subscribers); // Send the subscribers as a JSON response with a status of 200 (OK)
+    let subscribers = await schema.find();
+    res.status(200).json(subscribers);
   } catch (err) {
-    res.status(400); // Set the response status to 400 (Bad Request)
-    next(err); // Pass the error to the error handling middleware
+    res.status(400);
+    next(err);
   }
 });
 
-//THIS ROUTE PROVIDES AN ARRAY OF ALL SUBSCRIBERS WITH ONLY TWO FIELDS, THEIR NAME AND SUBSCRIBED CHANNEL.
+// Handle route for retrieving subscriber names
 app.get("/subscribers/names", async (req, res, next) => {
   try {
     let subscribers = await schema.find(
       {},
       { name: 1, subscribedChannel: 1, _id: 0 }
-    ); // Retrieve subscribers with only the name and subscribedChannel fields from the schema/model
-    res.status(200).json(subscribers); // Send the subscribers as a JSON response with a status of 200 (OK)
+    );
+    res.status(200).json(subscribers);
   } catch (err) {
-    res.status(400); // Set the response status to 400 (Bad Request)
-    next(err); // Pass the error to the error handling middleware
+    res.status(400);
+    next(err);
   }
 });
 
-// THIS ROUTE PROVIDES THE DETAILS OF SUBSCRIBER WITH THE GIVEN ID.
+// Handle route for retrieving subscriber details by ID
 app.get("/subscribers/:id", async (req, res) => {
   try {
-    const id = req.params.id; // Extract the ID parameter from the request URL
+    const id = req.params.id;
     if (!id) {
-      res.status(400).json({ message: "No ID provided" }); // Send a JSON response with a status of 400 (Bad Request)
+      res.status(400).json({ message: "No ID provided" });
       return;
     }
-    const subscriber = await schema.findById(id); // Find a subscriber with the given ID in the schema/model
+    const subscriber = await schema.findById(id);
     if (!subscriber) {
-      res.status(404).json({ message: "Subscriber not found" }); // Send a JSON response with a status of 404 (Not Found)
+      res.status(404).json({ message: "Subscriber not found" });
       return;
     }
-    res.send(subscriber); // Send the subscriber details as the response
+    res.send(subscriber);
   } catch (error) {
-    res.status(400).json({ message: error.message }); // Send a JSON response with a status of 400 (Bad Request) and the error message
+    res.status(400).json({ message: error.message });
   }
 });
 
-// HANDLES ALL THE UNWANTED REQUESTS.
+// Handle unknown routes
 app.use((req, res) => {
-  res.status(404).json({ message: "Error - Route not found" }); // Send a JSON response with a status of 404 (Not Found)
+  res.status(404).json({ message: "Error - Route not found" });
 });
 
-module.exports = app; // Export the Express application
+// Export the Express application
+module.exports = app;
