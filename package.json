@@ -5,7 +5,7 @@
   "scripts": {
     "test": "mocha '__tests__/*.js' --reporter mochawesome --recursive  --timeout 60000 --exit",
     "start": "node src/index.js",
-    "custom-test": "cd src && npx mocha test/db.test"
+    "custom-test": "npx mocha db.test.js"
   },
   "author": "",
   "license": "ISC",

@@ -1,12 +1,12 @@
 const chai = require("chai");
 const chaiHttp = require("chai-http");
-const app = require("../createDatabase"); // Assuming your Express application is in app.js
+const app = require("./src/createDatabase"); // Assuming your Express application is in app.js
 
 // Configure chai
 chai.use(chaiHttp);
 chai.should();
 
-const Subscriber = require("../models/subscribers");
+// const Subscriber = require("./src/models/subscribers");
 
 describe("Subscribers API", () => {
   // Test the home page
@@ -53,7 +53,7 @@ describe("Subscribers API", () => {
   // Test getting subscriber details by ID
   describe("GET /subscribers/:id", () => {
     it("should return details of a subscriber by ID", (done) => {
-      const subscriberId = "65f485ad87f64a503e4cbba1"; // Provide an existing subscriber ID for testing
+      const subscriberId = "65f5c8914cc718fb2c357ae1"; // Provide an existing subscriber ID for testing
       chai
         .request(app)
         .get(`/subscribers/${subscriberId}`)
